@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>轮播</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css" /> 
+</head>
+<body>
+	<div class="container">
+	  	<ul class="imgBox clearfix">
+		  <li><img src="./images/1.jpg" alt=""></li>
+		  <li><img src="./images/2.jpg" alt=""></li>
+		  <li><img src="./images/3.jpg" alt=""></li>
+		  <li><img src="./images/4.jpg" alt=""></li>
+		  <li><img src="./images/5.jpg" alt=""></li>
+		</ul>
+		 <div class="page clearfix">
+		  	<span class="prev"></span>
+		  	<span class="next"></span>
+		  </div>	  
+	</div>
+	 
+
+</body>
+</html>
+
+
+<script type="text/javascript" language="javascript">
+
+    function scrolling(){
+     $(".container .imgBox").animate({marginLeft:-640},100,function(){
+          $(this).append($(this).find("li:first"));
+           $(this).css("marginLeft","0px");
+         });
+      } 
+      setInterval(scrolling, 5000);       
+    function DY_scroll(wraper, prev, next)
+    {
+      var wraper = $(wraper);
+      var prev = $(prev);
+      var next = $(next);
+      var img = wraper.find('ul');
+      var w = img.find('li').outerWidth(true);
+     
+      next.click(function()
+      {
+        img.animate({'margin-left': -w}, function()
+        {
+          img.find('li').eq(0).appendTo(img);
+          img.css({'margin-left': 0});
+        });
+      });
+      prev.click(function()
+      {
+        img.find('li:last').prependTo(img);
+        img.css({'margin-left': -w});
+        img.animate({'margin-left': 0});
+      });
+      
+    }
+    DY_scroll('.container', '.prev', '.next');
+</script>

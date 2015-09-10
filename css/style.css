@@ -1,0 +1,20 @@
+﻿@charset "utf-8";
+*{margin:0px;padding:0px;}
+.clearfix{clear:both;zoom:1} /*清除浮动*/
+
+/*index_zy*/
+.clearfix:after{clear:both;display:block;height:0;font-size:0;content:".";visibility:hidden;}
+.container{width: 640px;height: 300px;overflow: hidden;margin: 50px auto;position: relative;}
+.container .imgBox{width: 3200px;height: 300px;}
+.imgBox li{float: left;width: 640px;height: 300px;list-style-type: none}
+.container .page{width: 640px;height: 40px;position: absolute;bottom: 50%;margin-bottom: -20px;}
+.container .page .prev{background: url(../images/tsy_18.png) center no-repeat;display: inline-block;background-size: 21px  39px;width: 21px;height: 39px;float: left;margin-left: 10px;}
+.container .page .next{background: url(../images/tsy_19.png) center no-repeat;display: inline-block;background-size: 21px  39px;width: 21px;height: 39px;float: right;margin-right: 10px;}
+
+/*index*/
+ .banner{width: 500px;margin: 20px auto;height: 234px;overflow: hidden;}
+.banner .Pic{width: 500px;position: relative;}
+.banner .Pic img{width: 100%;}
+.banner .PicNum{width:100px;height: 15px;margin: -20px 200px 0;text-align: center;position: absolute;}
+.PicNum .text{background: url(../images/num.png) no-repeat;height:15px;float: left;width: 25px;margin:}
+.PicNum .cur{background: url(../images/num_hover.png) no-repeat;}
