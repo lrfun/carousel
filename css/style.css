@@ -1,8 +1,6 @@
 ﻿@charset "utf-8";
 *{margin:0px;padding:0px;}
 .clearfix{clear:both;zoom:1} /*清除浮动*/
-
-/*index_zy*/
 .clearfix:after{clear:both;display:block;height:0;font-size:0;content:".";visibility:hidden;}
 .container{width: 640px;height: 300px;overflow: hidden;margin: 50px auto;position: relative;}
 .container .imgBox{width: 3200px;height: 300px;}
@@ -11,7 +9,13 @@
 .container .page .prev{background: url(../images/tsy_18.png) center no-repeat;display: inline-block;background-size: 21px  39px;width: 21px;height: 39px;float: left;margin-left: 10px;}
 .container .page .next{background: url(../images/tsy_19.png) center no-repeat;display: inline-block;background-size: 21px  39px;width: 21px;height: 39px;float: right;margin-right: 10px;}
 
-/*index*/
+
+.container .page1 .prev_dian{background: url(../images/num.png) center center no-repeat;display: inline-block;background-size: 15px  15px;width:15px;height: 15px;margin: 0px;padding:0px;}
+.container .page1 .cur{background: url(../images/num_hover.png) no-repeat;}
+
+.container .page1{width: 640px;height:15px;position: absolute;position: absolute;bottom: 10px;text-align: center;}
+
+
  .banner{width: 500px;margin: 20px auto;height: 234px;overflow: hidden;}
 .banner .Pic{width: 500px;position: relative;}
 .banner .Pic img{width: 100%;}

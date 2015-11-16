@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>轮播</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css" /> 
+</head>
+<body>
+	<div class="container">
+	  	<ul class="imgBox clearfix">
+		  <li><img src="./images/1.jpg" alt=""></li>
+		  <li><img src="./images/2.jpg" alt=""></li>
+		  <li><img src="./images/3.jpg" alt=""></li>
+		  <li><img src="./images/4.jpg" alt=""></li>
+		  <li><img src="./images/5.jpg" alt=""></li>
+		</ul>
+		 <div class="page clearfix">
+		  	<span class="prev btn" data-id="pre"></span>
+		  	<span class="next btn" data-id="next"></span>
+		  </div>
+
+		   <div class="page1">
+		  	<span class="prev_dian"></span>
+		  	<span class="prev_dian"></span>
+        <span class="prev_dian"></span>
+        <span class="prev_dian"></span>
+        <span class="prev_dian"></span>
+		  </div>
+	</div>
+	 
+
+</body>
+</html>
+
+
+<script type="text/javascript" language="javascript">
+
+    $(function () {
+            //图片轮播
+            var num = $(".imgBox li").length;
+            var i = 0;
+            var theInt
+            theInt = null;
+            $(".imgBox li").eq(0).fadeIn(500);
+            $(".page1 .prev_dian").eq(0).addClass("cur");
+            $(".page1 .prev_dian").each(function (i) {
+                $(this).click(function () {
+                    scrolling(i);
+                    Change(i);
+                });
+            });
+
+            // $(".btn").each(function(){
+            //     $(".btn").click(function(){                  
+            //       var pi=$(this).attr("data-id");                  
+            //       if(pi=="pre"){
+            //         i--;
+            //         if(i<0){
+            //          i=num-1;
+            //         };      
+            //         scrolling(i);
+            //         Change(i);
+                    
+            //         return false
+            //       };
+            //       if(pi=="next"){
+            //         i++;
+            //         if(i>num-1){
+            //           i=0;
+            //         }      
+            //         scrolling(i);
+            //         Change(i);     
+            //         return false
+            //       }
+            //     })
+            //   });
+            $('.prev').click(function(){
+               i--;
+                if(i<0){
+                 i=num-1;
+                };      
+                scrolling(i);
+                Change(i);
+                
+                return false
+            })
+            $('.next').click(function(){
+               i++;
+                if(i>num-1){
+                 i=0;
+                };      
+                scrolling(i);
+                Change(i);              
+                return false
+            })
+            
+            
+            
+           function scrolling (i) {
+                clearInterval(theInt);
+                theInt = setInterval(function () {
+                    i++;
+                    if (i < num) {
+                        Change(i);
+                    } else {
+                        i = 0; 
+                        Change(i);
+                    }
+                }, 5000);
+            };
+            scrolling(-1);
+            function Change(i) {
+                $(".imgBox li").fadeOut(500);
+                $(".imgBox li").eq(i).fadeIn(500);
+                $(".page1 .prev_dian").removeClass("cur");
+                $(".page1 .prev_dian").eq(i).addClass("cur");
+            }          
+           
+        });
+</script>
